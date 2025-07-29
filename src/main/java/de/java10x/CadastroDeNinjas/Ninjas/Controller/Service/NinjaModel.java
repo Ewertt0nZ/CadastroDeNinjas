@@ -1,7 +1,10 @@
-package de.java10x.CadastroDeNinjas;
+package de.java10x.CadastroDeNinjas.Ninjas.Controller.Service;
 
 
+import de.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -14,6 +17,14 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    private List<MissoesModel> missoesL;
+
+    // @ManyToOne muitos ninjas tem uma unica missão
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // Foreign key ou Chave Estrangeira
+    private MissoesModel missoes;
+
+
 
     public NinjaModel() {
     }
@@ -23,6 +34,7 @@ public class NinjaModel {
         this.email = email;
         this.idade = idade;
     }
+
 
     public String getNome() {
         return nome;
