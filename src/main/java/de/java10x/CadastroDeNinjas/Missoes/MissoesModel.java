@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table (name = "tb_missoes")
+@Table(name = "tb_missoes")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -22,7 +22,7 @@ public class MissoesModel {
     private String dificuldade;
 
     // @OneToMany uma missão tem muitos ninjas
-    @OneToMany (mappedBy = "missoes")
+    @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjas;
 
 
