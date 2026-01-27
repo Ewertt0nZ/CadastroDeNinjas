@@ -15,7 +15,7 @@ public class MissoesController {
 
 //  LOCALHOST:8080/MISSOES/CRIAR
 
-    private MissoesService missoesService;
+    private final MissoesService missoesService;
 
     public MissoesController(MissoesService missoesService) {
         this.missoesService = missoesService;
