@@ -1,0 +1,134 @@
+<!
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Tabela de Missões</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, #4F4F4F);
+            padding: 40px;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+         table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #FFF;
+            color: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+         thead {
+            background-color: #BA55D3;
+            color: #fff;
+        }
+
+        thead th {
+            padding: 14px;
+            text-align: left;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+         tbody td {
+            padding: 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tbody tr:hover {
+            background-color: #DCDCDC;
+            transition: 0.02s;
+        }
+
+        tbody img {
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: #1E90FF;
+            color: #fff;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #00FFFF;
+            color: #000;
+        }
+
+         td a:hover{
+            transform: translateY(-2px);
+        }
+
+        td a:nth-child(1){
+            border-radius: 8px;
+            background-color: #1E90FF;
+        }
+
+        td a:nth-child(2){
+            border-radius: 8px;
+            background-color: #1E90FF;
+        }
+
+        td a:nth-child(3){
+            border-radius: 8px;
+            background-color: #BA55D3;
+        }
+
+
+        </style>
+</head>
+<body>
+<h1>Lista de Missões</h1>
+<a class="btn-adicionar" th:href="@{/missoes/ui/adicionar}">Adicionar nova missão</a>
+<table>
+    <thead>
+         <tr>
+             <th>Id</th>
+             <th>Imagem</th>
+             <th>Nome da Missao</th>
+             <th>Dificuldade</th>
+         </tr>
+    </thead>
+    <tbody>
+            <tr th:each="missao:${missoes}">
+                <td th:text="${missao.id}"></td>
+                <td><img th:src="${missao.imgUrl}" width="125" height="100"></td>
+                <td th:text="${missao.nomeMissao}"></td>
+                <td th:text="${missao.dificuldade}"></td>
+
+                <td>
+                    <a th:href="@{/missoes/ui/listar/{id}(id=${missao.id})}">Ver Detalhes</a>
+                    <a th:href="@{/missoes/ui/alterar/{id}(id=${missao.id})}">Alterar</a>
+                    <a th:href="@{/missoes/ui/deletar/{id}(id=${missao.id})}">Deletar</a>
+                </td>
+            </tr>
+
+    </tbody>
+
+</table>
+</body>
+</html>

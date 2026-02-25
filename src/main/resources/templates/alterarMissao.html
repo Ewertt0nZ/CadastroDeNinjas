@@ -1,0 +1,109 @@
+<!
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, #4F4F4F);
+            padding: 40px;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        div {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            color: #000;
+       }
+
+       label {
+            margin: 10px 0 5px;
+            margin-left: 20px;
+            display: block;
+       }
+
+       input {
+            width: 100%;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+       }
+
+       button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: #1E90FF;
+            color: #fff;
+            cursor: pointer;
+            trasition: background-color 0.3s;
+            width: 100%;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+       }
+
+       button:hover {
+            background-color: #00FFFF;
+            color: #000;
+       }
+
+        a {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #1E90FF;
+            margin-top: 15px;
+            margin-left: 85px;
+            text-align: center;
+       }
+
+       a:hover {
+           color: #BA55D3;
+       }
+
+
+    </style>
+</head>
+<body>
+<h1>Alterar Missão</h1>
+<div>
+    <label>Nome da Missão:</label>
+    <input type="text"></input>
+
+    <label>Dificuldade da Missão:</label>
+    <input type="text"></input>
+
+    <label>URL da Imagem:</label>
+    <input type="text"></input>
+
+
+    <button>Salvar Alteração</button>
+
+    <a href="/missoes/ui/listar">Voltar para a lista de ninjas</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Adicionar Ninjas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, #4F4F4F);
+            padding: 40px;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            color: #000;
+        }
+
+         label {
+            margin: 10px 0 5px;
+            margin-left: 20px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+        }
+
+         button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: #1E90FF;
+            color: #fff;
+            cursor: pointer;
+            trasintion: background-color 0.3s;
+            width: 100%;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        button:hover {
+            background-color: #00FFFF;
+            color: #000;
+        }
+
+         a {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #1E90FF;
+            margin-top: 15px;
+            margin-left: 75px;
+            text-align: center;
+        }
+
+        a:hover {
+            color: #BA55D3;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Adicionar Nova Missão</h1>
+<div class="form-container">
+    <div th:if=@{mensagem} class="mensagem" th:text=${mensagem}></div>
+    <form th:action="@{/missoes/ui/salvar}" th:object="${missao}" method="post">
+        <label for="nomeMissao">Nome da Missão:</label>
+        <input type="text" id="nomeMissao" th:field="*{nomeMissao}" required/>
+
+        <label for="dificuldade">Dificuldade da Missão:</label>
+        <input type="text" id="dificuldade" th:field="*{dificuldade}" required/>
+
+        <label for="imgUrl">URL da Imagem:</label>
+        <input type="text" id="imgUrl" th:field="*{imgUrl}"/>
+
+        <button type="submit">Cadastrar Missão</button>
+    </form>
+
+    <a href="/missoes/ui/listar">Voltar para a lista de missões</a>
+</div>
+
+
+</body>
+</html>
+

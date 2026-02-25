@@ -1,0 +1,3 @@
+
+ALTER TABLE tb_missoes
+ADD COLUMN imgUrl VARCHAR(255);
